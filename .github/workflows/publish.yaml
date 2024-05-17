@@ -1,0 +1,26 @@
+# yamllint disable rule:line-length
+# yamllint disable rule:truthy
+---
+name: publish image
+
+on:
+  push:
+    branches:
+      - "!*"
+    tags:
+      - "*"
+
+jobs:
+
+  publish:
+    name: publish image
+    uses: ThoughtWorks-DPS/gha-tools-action/.github/workflows/publish-container.yaml@main
+    secrets:
+      OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+    with:
+      image: twdps/gha-container-infra-aws
+      sign-image: true
+      sbom: true
+      release-notes: true
+      release-message: New release ThoughtWorks-DPS/gha-container-infra-aws
+      before-publish: true

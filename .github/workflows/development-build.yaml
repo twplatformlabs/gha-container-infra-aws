@@ -1,0 +1,30 @@
+# yamllint disable rule:line-length
+# yamllint disable rule:truthy
+---
+name: development build and release
+
+on:
+  push:
+    branches:
+      - "*"
+    tags:
+      - "!*"
+
+jobs:
+
+  dev-release:
+    name: development build and release
+    uses: ThoughtWorks-DPS/gha-tools-action/.github/workflows/job-container-dev-release.yaml@main
+    secrets:
+      OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
+    with:
+      image: twdps/gha-container-infra-aws
+      opencontainer-labels: true
+      before-static-analysis: true
+      snyk-scan: true
+      snyk-severity-threshold: medium
+      snyk-organization: twdps
+      bats-test: true
+      bats-run-container-name: gha-container-infra-aws-image
+      bats-entry-point: /bin/ash
+      bats-test-path: test/gha-container-infra-aws.bats
