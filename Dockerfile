@@ -52,7 +52,6 @@ RUN sudo bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/
              awscli=="${AWSCLI_VERSION}" && \
     sudo npm install -g \
              snyk@1.1291.0 \
-             github-release-notes@0.17.3 \
              bats@1.11.0 && \
     sudo sh -c "echo 'gem: --no-document' > /etc/gemrc" && \
     sudo gem install \

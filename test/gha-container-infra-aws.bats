@@ -50,6 +50,11 @@
   [[ "${output}" =~ "3.2" ]]
 }
 
+@test "snyk version" {
+  run bash -c "docker exec circleci-infra-aws-alpine-edge snyk version"
+  [[ "${output}" =~ "1.1291" ]]
+}
+
 @test "shasum version" {
   run bash -c "docker exec cgha-container-infra-aws-image shasum --version"
   [[ "${output}" =~ "6." ]]
