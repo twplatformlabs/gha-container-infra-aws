@@ -51,7 +51,7 @@
 }
 
 @test "snyk version" {
-  run bash -c "docker exec circleci-infra-aws-alpine-edge snyk version"
+  run bash -c "docker exec gha-container-infra-aws-image snyk version"
   [[ "${output}" =~ "1.1291" ]]
 }
 
