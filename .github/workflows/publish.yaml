@@ -19,6 +19,7 @@ jobs:
       OP_SERVICE_ACCOUNT_TOKEN: ${{ secrets.OP_SERVICE_ACCOUNT_TOKEN }}
     with:
       image: twdps/gha-container-infra-aws
+      release-tag: latest
       sign-image: true
       sbom: true
       release-notes: true
