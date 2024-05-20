@@ -39,7 +39,7 @@ RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/r
     rm /usr/lib/python3.11/EXTERNALLY-MANAGED && \
     python3 -m ensurepip && \
     rm -r /usr/lib/python*/ensurepip && \
-    pip3 install --upgrade pip==24.0 && \
+    pip3 install --no-cache-dir --upgrade pip==24.0 && \
     if [ ! -e /usr/bin/pip ]; then ln -s /usr/bin/pip3 /usr/bin/pip ; fi && \
     ln -s /usr/bin/pydoc3 /usr/bin/pydoc && \
     pip install --no-cache-dir --no-binary \
