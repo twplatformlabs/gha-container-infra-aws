@@ -42,7 +42,7 @@ RUN bash -c "echo 'http://dl-cdn.alpinelinux.org/alpine/edge/main' >> /etc/apk/r
     pip3 install --upgrade pip==24.0 && \
     if [ ! -e /usr/bin/pip ]; then ln -s /usr/bin/pip3 /usr/bin/pip ; fi && \
     ln -s /usr/bin/pydoc3 /usr/bin/pydoc && \
-    pip install --no-binary \
+    pip install --no-cache-dir --no-binary \
         setuptools==69.5.1 \
         wheel==0.43.0 \
         invoke==2.2.0 \
