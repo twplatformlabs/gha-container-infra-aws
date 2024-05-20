@@ -2,6 +2,21 @@
 version: v1.25.0
 # Nearly all CVE's are remediated by virtue of the runtime context, e.g., on an ephemeral circleci executor.
 ignore:
+  SNYK-GOLANG-HELMSHHELMV3PKGENGINE-3317168:
+    - "*":
+      expires: 2024-06-01T14:26:34.404Z
+  SNYK-GOLANG-HELMSHHELMV3PKGCHARTUTIL-3172907:
+    - "*":
+      expires: 2024-06-01T14:26:34.404Z
+  SNYK-GOLANG-HELMSHHELMV3PKGCHARTUTIL-6247646:
+    - "*":
+      expires: 2024-06-01T14:26:34.404Z
+  SNYK-GOLANG-HELMSHHELMV3PKGCHART-6247645:
+    - "*":
+      expires: 2024-06-01T14:26:34.404Z
+  SNYK-GOLANG-GOPKGINSRCDGOGITV4-6150755:
+    - "*":
+      expires: 2024-06-01T14:26:34.404Z
   SNYK-DEBIANUNSTABLE-RUBY31-5406344:
     - "*":
       expires: 2024-06-01T14:26:34.404Z
