@@ -55,6 +55,11 @@
   [[ "${output}" =~ "1.1291" ]]
 }
 
+@test "terrascan version" {
+  run bash -c "docker exec gha-container-infra-aws-image terrascan version"
+  [[ "${output}" =~ "1.19" ]]
+}
+
 @test "shasum version" {
   run bash -c "docker exec gha-container-infra-aws-image shasum --version"
   [[ "${output}" =~ "6." ]]
